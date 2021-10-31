@@ -1,0 +1,9 @@
+{
+  "name": "matrix-console",
+  "version": "0.1.0",
+  "main": "matrix.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
