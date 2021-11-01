@@ -23,11 +23,15 @@ module.exports = class FallingText {
     }
 
     for (let i = 0; i < this.height; i++) {
+      let r = i === 0 ? 180 : 0;
+      let g = i === 0 ? 200 : 255 - Math.round((i * 255) / (this.height + 1));
+      let b = i === 0 ? 180 : 0;
+
       this.renderArray.push(
         chalk.rgb(
-          15,
-          255 - Math.round((i * 255) / (this.height + 1)),
-          15
+          r,
+          g,
+          b
         )(
           this.allChars[Math.round(Math.random() * this.allChars.length)] || "A"
         )
