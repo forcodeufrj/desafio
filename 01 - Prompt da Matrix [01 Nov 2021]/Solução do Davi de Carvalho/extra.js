@@ -11,12 +11,14 @@ let framesPerSecond = 30;
 let matrixRenderArray = [];
 
 let player;
-let score = 0;
-let time = 0;
+let score;
+let time;
 
-let started = true;
-let isGameFinished = false;
-let isLose = false;
+let isGameFinished;
+let isLose;
+
+let generationFactor;
+let speedFactor;
 
 let consoleWidth = 0;
 let consoleHeight = 0;
@@ -25,6 +27,14 @@ start();
 
 function start() {
   console.clear();
+
+  score = 0;
+  time = 0;
+  isLose = false;
+  isGameFinished = false;
+  matrixObjects = [];
+  generationFactor = 0;
+  speedFactor = 0;
 
   setConsoleSize();
 
@@ -38,7 +48,7 @@ function start() {
 function createObjects() {
   player = new Player(0, consoleHeight - 4, 4, 5);
   matrixObjects.push(new FallingText(0, consoleHeight - 4, 4, 5));
-  matrixObjects.push(new TextIndicator(0, 2, 1, `Score: ${score}`));
+  matrixObjects.push(new TextIndicator(0, 2, 1, `Score: ${score}/3`));
   matrixObjects.push(new Asteroid(0, consoleWidth, 5));
   matrixObjects.push(player);
   createAnApple();
@@ -51,10 +61,6 @@ function setConsoleSize() {
 
 async function matrixLoop() {
   setConsoleSize();
-
-  if (!started) {
-    return;
-  }
 
   if (score >= 3 && !isGameFinished) {
     matrixObjects = [];
@@ -127,6 +133,7 @@ function checkCollisions() {
   if (apple && apple.x === thePlayer.x && apple.y === thePlayer.y) {
     score++;
     apple.toDestroy = true;
+    textIndicator.setText(score);
     createAnApple();
   }
 
@@ -138,8 +145,6 @@ function checkCollisions() {
       }
     });
   }
-
-  textIndicator.setText(score);
 }
 
 function createAnApple() {
@@ -158,16 +163,13 @@ function createAnAsteroyd() {
     return;
   }
 
-  let factor = 0;
-  let speedFactor = 0;
-
-  if (score > 0) {
-    factor = score * 0.2;
+  if (score >= 0) {
+    generationFactor = score * 0.25;
 
     speedFactor = Math.round(score * Math.random());
   }
 
-  if (Math.random() < 0.8 - factor) {
+  if (Math.random() < 0.8 - generationFactor) {
     return;
   }
 
@@ -242,21 +244,39 @@ process.stdin.on("keypress", (str, key) => {
 
   if (key.name === "left") {
     player.x -= 1;
+
+    player.x = player.x < 0 ? consoleWidth - 1 : player.x;
+
     player.textSprite = "←";
   }
 
   if (key.name === "right") {
     player.x += 1;
+
+    player.x = player.x > consoleWidth - 1 ? 0 : player.x;
+
     player.textSprite = "→";
   }
 
   if (key.name === "up") {
     player.y -= 1;
+
+    player.y = player.y < 1 ? consoleHeight - 1 : player.y;
+
     player.textSprite = "↑";
   }
 
   if (key.name === "down") {
     player.y += 1;
+
+    player.y = player.y > consoleHeight - 1 ? 0 : player.y;
+
     player.textSprite = "↓";
+  }
+
+  if (key.name === "space") {
+    if (isLose || isGameFinished) {
+      start();
+    }
   }
 });

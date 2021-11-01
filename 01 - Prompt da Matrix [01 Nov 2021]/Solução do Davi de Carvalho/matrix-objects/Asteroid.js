@@ -26,7 +26,7 @@ module.exports = class Asteroid {
 
     this.x -= this.speed;
 
-    if (this.x - 1 <= 0) {
+    if (this.x - this.speed <= 0) {
       this.toDestroy = true;
     }
 
