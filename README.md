@@ -9,6 +9,8 @@
 
 - Cada semana do desafio tem sua pasta contendo as soluções dos participantes
 
+- Faça os commits indicando o desafio no início, exemplo: `01 BugFix: Correção tal`
+
 ## ⚠ Aviso para membros da for_code
 
 - Lembre-se de contribuir neste repositório com sua conta pessoal 😉
