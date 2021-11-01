@@ -1,13 +1,13 @@
-# [ DESAFIO FOR_CODE ]
+# 🚀 [ DESAFIO FOR_CODE ] 🚀
 
 ## 🤔 O que é?
 
 - Neste projeto, semanalmente resolvemos um desafio de programação proposto pelo grupo
-- Aqui você pode encontrar os resultados
+- Aqui você pode encontrar todas as nossas soluções!
 
 ## 📚 Organização
 
-- Cada semana do desafio é tem sua pasta contendo as soluções dos participantes
+- Cada semana do desafio tem sua pasta contendo as soluções dos participantes
 
 ## ⚠ Aviso para membros da for_code
 
