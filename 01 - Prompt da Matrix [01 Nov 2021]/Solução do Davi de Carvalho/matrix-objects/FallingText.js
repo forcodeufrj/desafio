@@ -4,6 +4,7 @@ module.exports = class FallingText {
   constructor(zIndex, height, x, y) {
     this.zIndex = zIndex;
     this.height = height;
+    this.width = 1;
     this.x = x;
     this.y = y;
     this.charIndex = 0;

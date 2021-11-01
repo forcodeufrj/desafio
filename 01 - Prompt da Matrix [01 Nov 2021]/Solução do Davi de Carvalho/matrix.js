@@ -1,4 +1,4 @@
-let fallingText = require("./matrix-objects/FallingText.js");
+let FallingText = require("./matrix-objects/FallingText.js");
 
 let isMatrixRunning = true;
 let matrixObjects = [];
@@ -25,7 +25,7 @@ function start() {
 }
 
 function createObjects() {
-  matrixObjects.push(new fallingText(0, consoleHeight - 4, 4, 5));
+  matrixObjects.push(new FallingText(0, consoleHeight - 4, 4, 5));
 }
 
 function setConsoleSize() {
@@ -83,11 +83,7 @@ function addRandomObjects() {
 
       y = y < 0 ? 0 : y;
 
-      // let height = i * 2 + 1;
-      // let x = 4;
-      // let y = 1;
-
-      matrixObjects.push(new fallingText(0, height, x, y));
+      matrixObjects.push(new FallingText(0, height, x, y));
     }
   }
 }
