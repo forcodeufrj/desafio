@@ -1,0 +1,8 @@
+body{background-color: #1E1647;}
+.container_size{margin-top:60px;}
+.heading{font-size:50px;}
+.username{width:330px; height:50px; border-radius:50px 50px 50px 50px;}
+li{list-style-type: none;}
+.text-heading{font-size:60px;}
+.urlBox{width:330px;}
+th,td{text-align: center;}

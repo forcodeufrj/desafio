@@ -1,0 +1,21 @@
+<DOCTYPE !HTML>
+
+    <html lang=en>
+        <head>
+            <meta charset="UTF-8">
+        <title>for_code shorty</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+            color: white;
+            font-family: lexend deca;
+            }
+        </style>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css.css') }}">
+
+        </head>
+        <body>
+            {% block body %}{% endblock %}
+        </body>
+    </html>
