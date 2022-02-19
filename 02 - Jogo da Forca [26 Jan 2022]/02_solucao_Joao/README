@@ -1,0 +1,7 @@
+Bibliotecas Necessárias:
+json
+random
+unidecode
+PySimpleGUI
+
+OBS: substituir o caminho onde a pasta se encontra na variável folder_path
