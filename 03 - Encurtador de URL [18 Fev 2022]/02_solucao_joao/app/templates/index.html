@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="{{ url_for('static', filename= 'png/ico.png') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <title>Shorty</title>
+      <script>
+         function copia()
+    {
+    id="link"
+        var str = document.getElementById(id).value;
+        var save = document.getElementById("copy").innerHTML;
+        document.getElementById("copy").innerHTML = str
+        window.getSelection().selectAllChildren(document.getElementById("copy"));
+        document.execCommand("Copy");
+        document.getElementById("copy").innerHTML = save
+        alert("Link copiado para a área de transferência!");
+    }
+
+      </script>
+   </head>
+   <body>
+      <div class="success" style={{style}}>
+         <div class="feedback">
+            <div class="reURL">
+               <input disabled type="text" value={{value}} id="link" class="reLink">
+               <div class="butBox">
+                  <button onclick="copia()" class="button2"></button>
+               </div>
+            </div>
+            <p id="copy">Sua URL foi encurtada com sucesso!</p>
+            <a href="/">
+            <img  src="{{ url_for('static', filename= 'png/button2.png') }}"
+               width="255" height="88">
+            </a>
+         </div>
+      </div>
+      <div class="mainDiv" >
+         <img src="{{ url_for('static', filename= 'png/logo.png') }}" alt="Logo for_code Shorty" class="logo">
+         <form method="POST">
+            <div class="boxURL">
+               <div class="formURL">
+                  <p>Insira aqui o URL</p>
+                  <div class="boxText">
+                     <input {{lock}} class="textURL" name="text">
+                  </div>
+               </div>
+               <button {{lock}}  type="submit" class="button1" style="cursor:{{pointer}}">  </button>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
