@@ -1,0 +1,155 @@
+@font-face {
+	font-family: Inter;
+	src: url(/static/fonts/Inter-VariableFont_slnt,wght.ttf);
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: #E8E3FF;
+    display:flex;
+}
+
+.mainDiv {
+    z-index:0;
+    position:fixed;
+	font-family: Inter;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+    width:100%;
+	padding: 0;
+	margin: 0;
+}
+
+.logo {
+	width: 356px;
+	padding-bottom: 60px;
+}
+
+.boxURL {
+	width: 844px;
+	height: 429px;
+	background-image: url(/static/png/box1.png );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.button1 {
+	padding: 0;
+	border: none;
+	background: none;
+	background-image: url(/static/png/button1.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 412px;
+	height: 88px;
+	align-self: center;
+}
+
+.formURL {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding-bottom: 40px;
+	padding-top: 68px;
+}
+
+.boxText {
+	font-size: 18px;
+	width: 642px;
+	height: 48px;
+	background-image: url(/static/png/box2.png );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.textURL {
+	font-family: Inter;
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 20px;
+	width: 622px;
+	height: 48px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+.success{
+    z-index:100;
+     font-family: Inter;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+    width:100%;
+	padding: 0;
+	margin: 0;
+    padding-top: 43px;
+}
+.feedback{
+    outline: 999em solid rgba(0,0,0, .5);
+    width: 614px;
+	height: 237px;
+	background-image: url(/static/png/box3.png );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+    display:flex;
+    flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+.reURL{
+    width: 422px;
+	height: 48px;
+	background-image: url(/static/png/box4.png );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+     display:flex;
+    flex-direction: row;
+}
+.reLink {
+	font-family: Inter;
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 20px;
+	width: 402px;
+	height: 48px;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+.butBox{
+     align-self: flex-end;
+     background-image: url(/static/png/button3.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 48px;
+}
+
+.button2{
+	padding: 0;
+	border: none;
+	width: 48px;
+	height: 48px;
+	background: none;
+    cursor:pointer;
+}
